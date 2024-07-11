@@ -115,6 +115,9 @@ importers:
 
   apps/vue-app:
     dependencies:
+      utils:
+        specifier: workspace:*
+        version: link:../../libs/utils
       vue:
         specifier: ^3.4.29
         version: 3.4.31(typescript@5.5.3)

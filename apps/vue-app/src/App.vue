@@ -1,5 +1,13 @@
 <script setup lang="ts">
+import { onMounted } from 'vue';
 import HelloWorld from './components/HelloWorld.vue';
+import { isEmpty } from 'utils';
+
+onMounted(() => {
+  fetch('http://localhost:5000')
+    .then((data) => data.json())
+    .then((data) => console.log(data));
+});
 </script>
 
 <template>
@@ -12,6 +20,8 @@ import HelloWorld from './components/HelloWorld.vue';
     </a>
   </div>
   <HelloWorld msg="Vite + Vue" />
+  <pre>{{ isEmpty('abc') }}</pre>
+  <pre>{{ isEmpty(null) }}</pre>
 </template>
 
 <style scoped>
