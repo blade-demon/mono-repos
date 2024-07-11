@@ -3,12 +3,10 @@ import pluginJs from '@eslint/js';
 import tseslint from 'typescript-eslint';
 import pluginReactConfig from 'eslint-plugin-react/configs/recommended.js';
 import { fixupConfigRules } from '@eslint/compat';
-import pluginVue from 'eslint-plugin-vue';
 
 const data = [
   { languageOptions: { parserOptions: { ecmaFeatures: { jsx: true } } } },
   { languageOptions: { globals: globals.browser } },
-  // ...pluginVue.configs['flat/recommended'],
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
   ...fixupConfigRules({
