@@ -20,7 +20,7 @@ onMounted(() => {
     </a>
   </div>
   <HelloWorld msg="Vite + Vue" />
-  <pre>{{ isEmpty('abc') }}</pre>
+  <pre>{{ isEmpty('abcddd') }}</pre>
   <pre>{{ isEmpty(null) }}</pre>
 </template>
 
