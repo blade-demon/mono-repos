@@ -1,11 +1,16 @@
-/* eslint-disable react/react-in-jsx-scope */
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import './App.css';
+import { isEmpty } from 'utils';
 
 function App() {
   const [count, setCount] = useState(0);
+  useEffect(() => {
+    fetch('http://localhost:5000')
+      .then((data) => data.json())
+      .then((data) => console.log(data));
+  }, []);
 
   return (
     <>
@@ -29,6 +34,8 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+      <pre>{isEmpty('abc')}</pre>
+      <pre>{isEmpty(null)}</pre>
     </>
   );
 }
